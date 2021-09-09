@@ -25,8 +25,8 @@ $(document).ready(function () {
         showPalette: true,
         palette: [["red", "rgba(0, 255, 0, .5)", "rgb(0, 0, 255)"]],
         hide: function(c) {
-            var $color = c.toHexString();
-            colorEdit($color);
+            var colorVal = c.toHexString();
+            colorEdit(colorVal);
         }
     });
     $("#heading2,#heading3,#heading4,#heading5").spectrum({
@@ -36,8 +36,8 @@ $(document).ready(function () {
         showPalette: true,
         palette: [["red", "rgba(0, 255, 0, .5)", "rgb(0, 0, 255)"]],
         hide: function(c) {
-            var $color = c.toHexString();
-            colorEdit($color);
+            var colorVal = c.toHexString();
+            colorEdit(colorVal);
         }
     });
     $("#sidebar1,#sidebar4").spectrum({
@@ -47,8 +47,8 @@ $(document).ready(function () {
         showPalette: true,
         palette: [["red", "rgba(0, 255, 0, .5)", "rgb(0, 0, 255)"]],
         hide: function(c) {
-            var $color = c.toHexString();
-            colorEdit($color);
+            var colorVal = c.toHexString();
+            colorEdit(colorVal);
         }
     });
     $("#sidebar2,#sidebar3").spectrum({
@@ -58,8 +58,8 @@ $(document).ready(function () {
         showPalette: true,
         palette: [["red", "rgba(0, 255, 0, .5)", "rgb(0, 0, 255)"]],
         hide: function(c) {
-            var $color = c.toHexString();
-            colorEdit($color);
+            var colorVal = c.toHexString();
+            colorEdit(colorVal);
         }
     });
     $("#sidebar5").spectrum({
@@ -69,8 +69,8 @@ $(document).ready(function () {
         showPalette: true,
         palette: [["red", "rgba(0, 255, 0, .5)", "rgb(0, 0, 255)"]],
         hide: function(c) {
-            var $color = c.toHexString();
-            colorEdit($color);
+            var colorVal = c.toHexString();
+            colorEdit(colorVal);
         }
     });
     $("#sidebar6").spectrum({
@@ -80,8 +80,8 @@ $(document).ready(function () {
         showPalette: true,
         palette: [["red", "rgba(0, 255, 0, .5)", "rgb(0, 0, 255)"]],
         hide: function(c) {
-            var $color = c.toHexString();
-            colorEdit($color);
+            var colorVal = c.toHexString();
+            colorEdit(colorVal);
         }
     });
     $("#main1").spectrum({
@@ -91,8 +91,8 @@ $(document).ready(function () {
         showPalette: true,
         palette: [["red", "rgba(0, 255, 0, .5)", "rgb(0, 0, 255)"]],
         hide: function(c) {
-            var $color = c.toHexString();
-            colorEdit($color);
+            var colorVal = c.toHexString();
+            colorEdit(colorVal);
         }
     });
     $("#main2,#main3").spectrum({
@@ -102,8 +102,8 @@ $(document).ready(function () {
         showPalette: true,
         palette: [["red", "rgba(0, 255, 0, .5)", "rgb(0, 0, 255)"]],
         hide: function(c) {
-            var $color = c.toHexString();
-            colorEdit($color);
+            var colorVal = c.toHexString();
+            colorEdit(colorVal);
         }
     });
     $("#main4").spectrum({
@@ -113,8 +113,8 @@ $(document).ready(function () {
         showPalette: true,
         palette: [["red", "rgba(0, 255, 0, .5)", "rgb(0, 0, 255)"]],
         hide: function(c) {
-            var $color = c.toHexString();
-            colorEdit($color);
+            var colorVal = c.toHexString();
+            colorEdit(colorVal);
         }
     });
     $("#main5").spectrum({
@@ -124,15 +124,15 @@ $(document).ready(function () {
         showPalette: true,
         palette: [["red", "rgba(0, 255, 0, .5)", "rgb(0, 0, 255)"]],
         hide: function(c) {
-            var $color = c.toHexString();
-            colorEdit($color);
+            var colorVal = c.toHexString();
+            colorEdit(colorVal);
         }
     });
     $(".sp-choose").text("Set color");
     
     // Color editw Script
     
-    $(".sp-replacer").on("click", function(){
+    $(".sp-replacer").on("click touchstart", function(){
         var inputId = $(this).siblings("input").attr("id");
         var inputVal = $(this).parent(".inputField").find("input").attr("title");
         $(".currentSp").val(inputId);
@@ -140,12 +140,12 @@ $(document).ready(function () {
     });
     
 });
-function colorEdit($color){
-    var $title = $(".currentSp").attr("title");
-    var $value = $(".currentSp").val();
-    if($title == "bgColor"){
-        $("."+$value).css("background-color",$color);
+function colorEdit(colorVal){
+    var titleTxt = $(".currentSp").attr("title");
+    var valueTxt = $(".currentSp").val();
+    if(titleTxt == "bgColor"){
+        $("."+valueTxt).css("background-color",colorVal);
     }else{
-        $("."+$value).css("color",$color);
+        $("."+valueTxt).css("color",colorVal);
     }
 }
